@@ -9,14 +9,43 @@ PC installed with SCILAB.
 
 # PROGRAM (Linear Convolution): 
 
-// Linear Convolution
+clc; clear;
+
+x = [1 1 2 1]; h = [1 2 3 4];
+
+y = conv(x, h);
+
+disp(y, "Linear Convolution Result:");
+
+subplot(1,1,1); plot2d3(0:length(y)-1, y); xtitle("Linear Convolution", "n", "Amplitude");
 
 # PROGRAM (Circular Convolution): 
 
-// Circular Convolution
+clc; clear;
+
+x1 = [1 -1 -2 3 -1]; x2 = [1 2 3];
+
+N1 = length(x1); N2 = length(x2); N = max(N1, N2);
+
+x1 = [x1, zeros(1, N - N1)]; x2 = [x2, zeros(1, N - N2)];
+
+X1 = fft(x1, -1); X2 = fft(x2, -1); Y = X1 .* X2;
+
+y = real(fft(Y, 1));
+
+disp(y, "Circular Convolution Result:");
+
+subplot(1,1,1); plot2d3(0:length(y)-1, y); xtitle("Circular Convolution", "n", "Amplitude");
 
 # OUTPUT (Linear Convolution): 
+![WhatsApp Image 2025-09-02 at 10 45 11_083b34a4](https://github.com/user-attachments/assets/8cb55254-22f8-421c-95da-91bb58b78e4a)
+![WhatsApp Image 2025-09-02 at 10 35 32_6cb957a1](https://github.com/user-attachments/assets/d26862b4-5fcc-4d5c-9462-50d6d0c15e29)
+
 
 # OUTPUT (Circular Convolution): 
+![WhatsApp Image 2025-09-02 at 10 48 14_faf77a6e](https://github.com/user-attachments/assets/ff6a431f-38bf-4f79-a5e1-d384abedd510)
+![WhatsApp Image 2025-09-02 at 10 35 38_761728ef](https://github.com/user-attachments/assets/420fb9d2-6916-4e64-8959-b105e5113e9e)
 
-# RESULT: 
+# RESULT:
+
+Linear convolution produces an output sequence whose length is greater than the original sequences, representing the complete overlap of one sequence sliding over the other, while circular convolution produces an output sequence of fixed length, where values wrap around due to periodic extension of the signals.
