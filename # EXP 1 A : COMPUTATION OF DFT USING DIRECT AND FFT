@@ -22,7 +22,6 @@ plot2d3(0:N-1, abs(X));
 xtitle("Magnitude Spectrum |X(k)|", "k", "Magnitude");
 
 # OUTPUT: 
-
-![WhatsApp Image 2025-09-01 at 15 24 39_9802c260](https://github.com/user-attachments/assets/6bc1db20-df07-49bd-91da-14b8ee49d8c6)
+file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/F457C545A9DED88F18ECEE47145A72C0/WhatsApp%20Image%202025-09-07%20at%2016.22.04_e29eb751.jpg
 # RESULT: 
 Thus the desired result is obtained
